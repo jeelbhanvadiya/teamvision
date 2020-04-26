@@ -4,8 +4,8 @@ import './index.css';
 import './App.css';
 import Quiz from "./components/Quiz/index";
 import Home from "./components/Home";
-import Certificate from "./components/Certificate/index"
 import Registration from "./components/Registration";
+import End from "./components/End";
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class App extends React.Component {
               <Route exact path="/" name="Home" component={Home}/>
               <Route exact path="/registration" name="Home" component={Registration}/>
               <Route  exact path="/quiz" name="Home" component={Quiz}/>
-              <Route  exact path="/certificate" name="Home" component={Certificate}/>
+              <Route  exact path="/finish" name="Home" component={End}/>
             </Switch>
           </BrowserRouter>
 

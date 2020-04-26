@@ -13,7 +13,13 @@
 .App-intro {
   font-size: large;
 }
-
+.cus-result{
+  margin-top:10px;
+  font-size:15px;
+  line-height:1.5;
+  margin-left:11px;
+  margin-right:11px
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);
