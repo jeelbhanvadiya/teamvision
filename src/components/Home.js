@@ -31,7 +31,7 @@ const Home = () => (
                                              </div>
                                              <div className="action text-uppercase">
                                                  <a href="#" className="btn btn-white">Learn More</a>
-                                                 <a href="/quiz" className="btn btn-primary">Start Quiz</a>
+                                                 <a href="/registration" className="btn btn-primary">Start Quiz</a>
                                              </div>
                                          </div>
                                      </div>

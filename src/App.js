@@ -5,6 +5,7 @@ import './App.css';
 import Quiz from "./components/Quiz/index";
 import Home from "./components/Home";
 import Certificate from "./components/Certificate/index"
+import Registration from "./components/Registration";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class App extends React.Component {
           <BrowserRouter>
             <Switch>
               <Route exact path="/" name="Home" component={Home}/>
+              <Route exact path="/registration" name="Home" component={Registration}/>
               <Route  exact path="/quiz" name="Home" component={Quiz}/>
               <Route  exact path="/certificate" name="Home" component={Certificate}/>
             </Switch>
