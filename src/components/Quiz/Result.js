@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect} from "react-router-dom"
-import img from "../../img/01.jpg"
+import img from "../../img/certficatre.jpg"
 let total = 0;
 
 class Result extends React.Component {

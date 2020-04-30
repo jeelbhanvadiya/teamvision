@@ -1,32 +1,48 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import firebase from 'firebase'
 import {DB_CONFIG } from "../base";
 import {Redirect} from "react-router-dom"
-
+import logo from "../img/logo.jpg"
 const app = firebase.initializeApp(DB_CONFIG);
 const database = app.database().ref('users');
 
-const Registration =() => {
+const Registration =(props) => {
 
     const [data,setData] = useState({});
+    const [list,setList] = useState([]);
     const [redirect,setRedirect] = useState(false);
-    const onChange =(e) => {
-        setData({...data,[e.target.name]:e.target.value})
-    };
+    const onChange =(e) => {setData({...data,[e.target.name]:e.target.value})};
+
+    useEffect(() => {
+        database.on("value", snapshot => {
+            let allNotes = [];
+            snapshot.forEach(snap => {
+                allNotes.push(snap.val());
+            });
+            setList(allNotes)
+        });
+    },[]);
 
     const submit = () => {
-        const newMess   =  database.push();
-        newMess.set({
-            name:data.name,
-            mobile:data.mobile,
-            email:data.email,
-            gender:data.gender,
-            age:data.age,
-            address:data.address
-        },()=>{
-            alert("suceesfully send");
-            setRedirect(true)
-        })
+     const isEmail =  list && list.filter((value)=> value.email === data.email);
+     if(isEmail.length > 0){
+         alert("you are already participated");
+         localStorage.removeItem("email")
+     }else{
+         const newMess   =  database.push();
+         newMess.set({
+             name:data.name,
+             mobile:data.mobile,
+             email:data.email,
+             gender:data.gender,
+             age:data.age,
+             address:data.address
+         },()=>{
+             alert("suceesfully send");
+             localStorage.setItem("email",data.email);
+             setRedirect(true)
+         })
+     }
     };
     if(redirect){
         return (
@@ -35,7 +51,7 @@ const Registration =() => {
     }
     return(
         <div className="content-wrapper">
-            <div className="col-md-6 col-md-offset-3">
+            <div className="col-md-6 col-md-offset-3" >
                 <section className="content-header">
                     <h2>
                         Participant Information
@@ -141,12 +157,18 @@ const Registration =() => {
                                         className="btn btn-success"
                                 >
                                     Start Quiz
-                                </button>
+                                </button>&nbsp;
+                                <a href="/"
+
+                                        className="btn btn-primary"
+                                >
+                                    Go to Home
+                                </a>
                             </div>
                     </div>
                 </section>
             </div>
-            <div className="clearfix" />
+            <div className="clearfix"/>
         </div>
 )
 };

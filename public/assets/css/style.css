@@ -162,6 +162,8 @@ body {
     line-height: 22px;
     font-weight: 400;
     word-wrap: break-word;
+    background-color: #ccc;
+
 }
 
 p:last-child { /* RESET MARGIN OF LAST P TAG */

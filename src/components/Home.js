@@ -1,10 +1,8 @@
 import React from "react";
-import image from "../img/01.jpg"
+import image from "../img/logo.jpg"
 
 const List = [
-    {img:image,title:"Welcome To TeamVision",subtitle:"Connect, Share &amp; Engage",des:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."},
-    {img:image,title:"Welcome To TeamVision",subtitle:"Connect, Share &amp; Engage",des:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."},
-    {img:image,title:"Welcome To TeamVision",subtitle:"Connect, Share &amp; Engage",des:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."}
+    {img:image,title:"Welcome To TeamVision",subtitle:"About Us",des:"We are work as a helping hand to needy people and also try to guide collegiate youth to choose right path instead of addictions. We are giving free education to children's of labour of farms & factories and we also doing environment related works like planting, recycle unnecessary things, old clothes and many other. We are build new india through making big youth and educated team for social awareness."}
 ];
 
 const Home = () => (
@@ -30,7 +28,6 @@ const Home = () => (
                                                  <p>{value.des}</p>
                                              </div>
                                              <div className="action text-uppercase">
-                                                 <a href="#" className="btn btn-white">Learn More</a>
                                                  <a href="/registration" className="btn btn-primary">Start Quiz</a>
                                              </div>
                                          </div>

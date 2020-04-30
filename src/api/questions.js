@@ -1,130 +1,260 @@
 var quizQuestions = [
   {
-    question: "What franchise would you rather play a game from?",
-    answerindex : 2,
+    question: "How many district in kathiyavad?",
+    answerindex : 3,
     answers: [
       {
         type: "IBM",
-        content: "Halo",
+        content: "5",
         answer : false
       },
       {
         type: "amdocs",
-        content: "Pokemon",
+        content: "9",
         answer : false
       },
       {
         type: "Sony2",
-        content: "Uncharted1",
+        content: "11",
         answer : false
       },
       {
         type: "Sony1",
-        content: "Uncharted2",
+        content: "13",
         answer : false
       }
     ]
   },
   {
-    question: "Which console would you prefer to play with friends?",
-    answerindex : 1,
+    question: "Which is the first gujarati colour movie?",
+    answerindex : 2,
     answers: [
       {
         type: "IBM",
-        content: "X-Box",
+        content: "Narsinh mehta",
         answer : false
       },
       {
         type: "amdocs",
-        content: "amdocs 64",
+        content: "Liludi dharti",
         answer : false
       },
       {
         type: "Sony",
-        content: "Playstation 100",
+        content: "Sati savitri",
         answer : false
       },
       {
         type: "Sonyq",
-        content: "Playstation 1",
+        content: "Ghar jamai",
         answer : false
       }
     ]
   },
   {
-    question: "Which of these racing franchises would you prefer to play a game from?",
-    answerindex : 1,
+    question: "Who sing a gujarat's anthem?",
+    answerindex : 3,
     answers: [
       {
         type: "IBM",
-        content: "Forza",
+        content: "Dalpatram",
         answer : false
       },
       {
         type: "amdocs",
-        content: "Mario Kart",
+        content: "Javerchand meghani",
         answer : false
       },
       {
         type: "Sony",
-        content: "Gran Turismo",
+        content: "Narmad",
         answer : false
       },
       {
         type: "Sonyw",
-        content: "Playstation 1qq",
+        content: "Umashankar joshi",
         answer : false
       }
     ]
   },
   {
-    question: "Which of these games do you think is best?",
-    answerindex : 1,
+    question: "Who is awarded as rastriy a shayar by mahatma gandhi?",
+    answerindex : 2,
     answers: [
       {
         type: "IBM",
-        content: "BioShock",
+        content: "Mohanlal pandya",
         answer : false
       },
       {
         type: "amdocs",
-        content: "The Legend of Zelda: Ocarina of Time",
+        content: "Javerchand meghani",
         answer : false
       },
       {
         type: "Sony",
-        content: "Final Fantasy VII",
+        content: "Narmad",
         answer : false
       },
       {
         type: "Sonyr",
-        content: "Playstation 1",
+        content: "Dalpatran",
         answer : false
       }
     ]
   },
   {
-    question: "What console would you prefer to own?",
-    answerindex : 1,
+    question: "Who were define indian currency as a rupee?",
+    answerindex : 2,
     answers: [
       {
         type: "IBM",
-        content: "X-Box One",
+        content: "Farrukh siyar",
         answer : false
       },
       {
         type: "amdocs",
-        content: "Wii U",
+        content: "Sher shah suri",
         answer : false
       },
       {
         type: "Sony",
-        content: "Playstation 4",
+        content: "Jahangir",
         answer : false
       },
       {
         type: "Sonyqqå",
-        content: "Playstation11 1",
+        content: "Mahommad begdo",
+        answer : false
+      }
+    ]
+  },
+  {
+    question: "Find the right pair of states and union territories.",
+    answerindex : 3,
+    answers: [
+      {
+        type: "IBM",
+        content: "29,7",
+        answer : false
+      },
+      {
+        type: "amdocs",
+        content: "28,7",
+        answer : false
+      },
+      {
+        type: "Sony",
+        content: "28,8",
+        answer : false
+      },
+      {
+        type: "Sonyqqå",
+        content: "29,8",
+        answer : false
+      }
+    ]
+  },
+  {
+    question: " Who was the first governer of gujarat?",
+    answerindex : 2,
+    answers: [
+      {
+        type: "IBM",
+        content: "P.N.Bhagavati",
+        answer : false
+      },
+      {
+        type: "amdocs",
+        content: "Mahendi navaz jung",
+        answer : false
+      },
+      {
+        type: "Sony",
+        content: "Shriman narayan",
+        answer : false
+      },
+      {
+        type: "Sonyqqå",
+        content: "Jivraj mehta",
+        answer : false
+      }
+    ]
+  },
+  {
+    question: "Name of the first engineering college established in saurashtra.",
+    answerindex : 3,
+    answers: [
+      {
+        type: "IBM",
+        content: "Government engineering college , rajkot",
+        answer : false
+      },
+      {
+        type: "amdocs",
+        content: "Om engineering college , junagarh",
+        answer : false
+      },
+      {
+        type: "Sony",
+        content: "Lukhdhirji engineering college , morbi",
+        answer : false
+      },
+      {
+        type: "Sonyqqå",
+        content: "Shantilal Shah college, bhavnagar",
+        answer : false
+      }
+    ]
+  },
+  {
+    question: "The old name of kakariya lake is?",
+    answerindex : 1,
+    answers: [
+      {
+        type: "IBM",
+        content: "Huiz-i-qutb",
+        answer : false
+      },
+      {
+        type: "amdocs",
+        content: "Karnavati",
+        answer : false
+      },
+      {
+        type: "Sony",
+        content: "Ahmedabad lake",
+        answer : false
+      },
+      {
+        type: "Sonyqqå",
+        content: "None of the above",
+        answer : false
+      }
+    ]
+  },
+  {
+    question: "Who is known as \"muchhali ma\"?",
+    answerindex : 2,
+    answers: [
+      {
+        type: "IBM",
+        content: "Zaverchand meghani",
+        answer : false
+      },
+      {
+        type: "amdocs",
+        content: "Gijubhai badheka",
+        answer : false
+      },
+      {
+        type: "Sony",
+        content: "Lala lajpatray",
+        answer : false
+      },
+      {
+        type: "Sonyqqå",
+        content: "Umashankar joshi",
         answer : false
       }
     ]

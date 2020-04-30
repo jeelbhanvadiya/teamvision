@@ -39,11 +39,16 @@ class QuizTime extends Component {
     }
 
     componentWillMount() {
-        this.setState({
-            question: quizQuestions[0].question,
-            answerOptions : quizQuestions[0].answers,
-            allQuestions : quizQuestions
-        });
+        if(localStorage.getItem("email")){
+            this.setState({
+                question: quizQuestions[0].question,
+                answerOptions : quizQuestions[0].answers,
+                allQuestions : quizQuestions
+            });
+        }else {
+            this.props.history.push("/")
+        }
+
     }
 
 

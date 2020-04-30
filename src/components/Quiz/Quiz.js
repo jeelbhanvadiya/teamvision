@@ -42,9 +42,9 @@ function Quiz(props) {
                   {props.answerOptions.map(renderAnswerOptions)}
               </ul>
               <div className="bottom-footer" >
-                  {props.counter > 0 && Object.keys(props.allAnswer).length !== 5  ? (<button className="Previous-btn" onClick={props.setPreviousQuestion} >Previous</button>) : (<div></div>)}
-                  {props.counter < 4  ? (<button className="next-btn" onClick={props.setNextQuestion} >Next</button>) : (<div></div>)}
-                  {Object.keys(props.allAnswer).length === 5  ? (<button className="Previous-btn"  onClick={props.viewreults} >Submit</button>) : (<div></div>)}
+                  {props.counter > 0 && Object.keys(props.allAnswer).length !== 10  ? (<button className="Previous-btn" onClick={props.setPreviousQuestion} >Previous</button>) : (<div></div>)}
+                  {props.counter < 9 ? (<button className="next-btn" onClick={props.setNextQuestion} >Next</button>) : (<div></div>)}
+                  {Object.keys(props.allAnswer).length === 10  ? (<button className="Previous-btn"  onClick={props.viewreults} >Submit</button>) : (<div></div>)}
 
               </div>
           </div>

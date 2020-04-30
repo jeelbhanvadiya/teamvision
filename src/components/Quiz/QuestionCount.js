@@ -5,7 +5,7 @@ function QuestionCount(props) {
   return (
     <div className="questionCount">
       Question <span>{props.counter}</span> of <span>{props.total}</span>
-       {props.counter === 5 ? (<a className="result-link" style={{marginLeft:"57px"}} href="" onClick={props.viewreults}>View Results</a>) : (<div></div>)}
+       {/*{props.counter === 5 ? (<a className="result-link" style={{marginLeft:"57px"}} href="" onClick={props.viewreults}>View Results</a>) : (<div></div>)}*/}
     </div>
   );
 
