@@ -9,7 +9,9 @@
   color: white;
   text-align: center;
 }
-
+.cus-height{
+  height: 731px ;
+}
 .App-intro {
   font-size: large;
 }

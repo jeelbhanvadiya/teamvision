@@ -6,7 +6,8 @@ import Quiz from "./components/Quiz/index";
 import Home from "./components/Home";
 import Registration from "./components/Registration";
 import End from "./components/End";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 class App extends React.Component {
   constructor(props) {
     super(props);

@@ -2,12 +2,10 @@ import React, {useState,useEffect} from "react";
 import firebase from 'firebase'
 import {DB_CONFIG } from "../base";
 import {Redirect} from "react-router-dom"
-import logo from "../img/logo.jpg"
 const app = firebase.initializeApp(DB_CONFIG);
 const database = app.database().ref('users');
 
 const Registration =(props) => {
-
     const [data,setData] = useState({});
     const [list,setList] = useState([]);
     const [redirect,setRedirect] = useState(false);
@@ -27,21 +25,32 @@ const Registration =(props) => {
      const isEmail =  list && list.filter((value)=> value.email === data.email);
      if(isEmail.length > 0){
          alert("you are already participated");
-         localStorage.removeItem("email")
+         localStorage.removeItem("email");
+         setData({})
      }else{
-         const newMess   =  database.push();
-         newMess.set({
-             name:data.name,
-             mobile:data.mobile,
-             email:data.email,
-             gender:data.gender,
-             age:data.age,
-             address:data.address
-         },()=>{
-             alert("suceesfully send");
-             localStorage.setItem("email",data.email);
-             setRedirect(true)
-         })
+         if(!data.email.match( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+             alert("plz enter valid email")
+         }
+         else if(data.mobile.length !== 10){
+            alert("mobile number should be 10 digit")
+         }else {
+             const newMess   =  database.push();
+             newMess.set({
+                 name:data.name,
+                 mobile:data.mobile,
+                 email:data.email,
+                 gender:data.gender,
+                 age:data.age,
+                 city:data.city,
+
+                 interested:data.interested,
+             },()=>{
+                 alert("suceesfully send");
+                 localStorage.setItem("email",data.email);
+                 setRedirect(true)
+             })
+         }
+
      }
     };
     if(redirect){
@@ -117,51 +126,41 @@ const Registration =(props) => {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="exampleInputPassword1">Address</label>
+                                    <label htmlFor="exampleInputPassword1">City</label>
                                     <input
                                         type="text"
                                         className="form-control"
                                         onChange={(e)=>{onChange(e)}}
                                         id="place"
-                                        name="address"
-                                        placeholder="Enter Address "
+                                        name="city"
+                                        placeholder="Enter City "
                                         required
                                     />
                                 </div>
-                                {/*<div className="form-group">*/}
-                                {/*    <label htmlFor="exampleInputPassword1">Occupation </label>*/}
-                                {/*    <select className="form-control" id="occu" name="occu" required>*/}
-                                {/*        <option value="Student">Student/மாணவர்</option>*/}
-                                {/*        <option value="Employee">Employee/ஊழியர்</option>*/}
-                                {/*        <option value="Business">Business/வணிக</option>*/}
-                                {/*        <option value="Housewife">Housewife/இல்லத்து அரசி</option>*/}
-                                {/*        <option value="Farmer">Farmer/உழவர்</option>*/}
-                                {/*    </select>*/}
-                                {/*</div>*/}
-                                {/*<div className="form-group">*/}
-                                {/*    <label htmlFor="exampleInputPassword1">Qualification </label>*/}
-                                {/*    <select className="form-control" id="qua" name="qua" required>*/}
-                                {/*        <option value="Illitrate">Illitrate/படிப்பறிவு இல்லாதவர்</option>*/}
-                                {/*        <option value="Primary School">Primary School/ஆரம்ப பள்ளி</option>*/}
-                                {/*        <option value="Secondary School">Secondary School/ உயர்நிலை பள்ளி</option>*/}
-                                {/*        <option value="College">College/College / கல்லூரி</option>*/}
-                                {/*        <option value="Others">Others/மற்றவை</option>*/}
-                                {/*    </select>*/}
-                                {/*</div>*/}
+                                <div className="form-group">
+                                    <label htmlFor="exampleInputPassword1">Are you interested in social work in your area?</label>
+                                    <select className="form-control"
+                                            onChange={(e)=>{onChange(e)}}
+                                            placeholder="Select"
+                                            defaultValue="Select"
+                                            name="interested"
+                                            required
+                                    >
+                                        <option value="Select" defaultValue disabled>Select</option>
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                </div>
                             </div>
-
                             <div className="box-footer">
                                 <button
                                         onClick={submit}
-                                        disabled={!data.name || !data.mobile || !data.email || !data.gender || !data.age || !data.address }
+                                        disabled={!data.name || !data.mobile || !data.email || !data.gender || !data.age || !data.city }
                                         className="btn btn-success"
                                 >
                                     Start Quiz
                                 </button>&nbsp;
-                                <a href="/"
-
-                                        className="btn btn-primary"
-                                >
+                                <a href="/" className="btn btn-primary">
                                     Go to Home
                                 </a>
                             </div>

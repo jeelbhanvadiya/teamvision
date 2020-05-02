@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../img/logo.jpg"
 const End = () => {
+    localStorage.removeItem("email");
     return(
 
             <div className="container" >
